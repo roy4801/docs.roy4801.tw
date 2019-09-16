@@ -1,6 +1,17 @@
 site_name: roy4801's knowledge
+site_description: A place to dump memory from my brain
 theme:
   name: 'material'
+
+repo_name: roy4801/docs.roy4801.tw
+repo_url: https://github.com/roy4801/docs.roy4801.tw
+
+markdown_extensions:
+  - admonition  #  note blocks, warning blocks -- https://github.com/mkdocs/mkdocs/issues/1659
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
 
 # nav:
 # - Home: 'index.md'
