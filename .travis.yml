@@ -3,13 +3,21 @@ language: python
 python:
   - "3.6"
 
+branches:
+  only:
+    - master
+
 install:
   - pip install mkdocs
   - pip install mkdocs-material
 
 script:
-  - mkdocs gh-deploy --force --clean
+  - mkdocs build
 
-branches:
-  only:
-    - master
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: $TRAVIS_BUILD_DIR/site/
+  github_token: $GITHUB_API_KEY
+  on:
+    branch: master
