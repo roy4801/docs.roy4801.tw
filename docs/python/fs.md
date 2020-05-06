@@ -5,7 +5,17 @@ file-system related
 * List directory
 
 ```python3
-os.listdir('/') -> [paths]
+os.listdir(path) -> [a, b, ...]
+
+# depth = 1
+(dirpath, dirnames, filenames) = next(os.walk(path))
+```
+
+* Walk directory and files recursively
+
+```python3
+for (dirpath, dirnames, filenames) in os.walk(path):
+    # ...
 ```
 
 * Current directory (`pathlib`) 
@@ -50,6 +60,10 @@ shutil.rmtree(path)
 ```python3
 Path(dir_path).rmdir() == os.rmdir(dir_path)
 ```
+
+
+
+## `os` and `pathlib`
 
 ![](https://i.imgur.com/zhTMe60.png)
 
