@@ -1,4 +1,4 @@
-# Install Other version of Python
+# Install Other version
 
 * Install
 ```bash
