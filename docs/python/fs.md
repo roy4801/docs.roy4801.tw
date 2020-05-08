@@ -61,7 +61,11 @@ shutil.rmtree(path)
 Path(dir_path).rmdir() == os.rmdir(dir_path)
 ```
 
+* touch a file
 
+```python3
+Path(path).touch()
+```
 
 ## `os` and `pathlib`
 
