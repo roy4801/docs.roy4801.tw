@@ -8,8 +8,10 @@ date: 2019-09-16
 
 根據[官網](https://www.mkdocs.org/)介紹，MkDocs是個用於project documentation的static site generator，並且強調快速、簡單，文件使用`markdown`撰寫，設定檔使用`YAML`，並且可以使用[主題](https://www.mkdocs.org/user-guide/styling-your-docs/#built-in-themes)等高度自訂化。
 
-> 使用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-```
+* 使用 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+	* `pip install mkdocs-material`
+
+```bash
 mkdocs --version    # Check the path
 cd ..../theme       # the ... replace with the path see above
 git clone https://github.com/squidfunk/mkdocs-material.git
@@ -18,20 +20,22 @@ ln -s mkdocs-material/material material
 
 ## 安裝
 
-* ~~用package manager安裝~~，或是自已build
+* <del>用package manager安裝</del>，或是自已build
+
 ```
 $ brew install mkdocs
 ```
 
 !!!danger
-	用`pip`安裝即可，若使用package manager安裝則後續會遇到目錄問題
-	> https://github.com/squidfunk/mkdocs-material/issues/52
+	用`pip`安裝即可，若使用package manager安裝則後續會遇到目錄問題 <br>
+	<https://github.com/squidfunk/mkdocs-material/issues/52>
 
-> https://www.mkdocs.org/#installation
+<https://www.mkdocs.org/#installation>
 
 ## 基本使用
 
 * 新建專案
+
 ```
 $ mkdocs new <project name>
 INFO    -  Creating project directory: docs
@@ -42,6 +46,7 @@ INFO    -  Writing initial docs: docs/docs/index.md
 `mkdocs`會產生你指定的目錄及底下的檔案，而之後要往你的docs加東西就往這個目錄新建檔案。
 
 * 測試
+
 ```
 $ mkdocs serve
 INFO    -  Building documentation...
@@ -51,8 +56,7 @@ INFO    -  Cleaning site directory
 
 訪問[http://127.0.0.1:8000](http://127.0.0.1:8000)看到以下畫面便完成新`mkdocs`專案建立
 
-
-![](https://i.imgur.com/boO6GZw.png)
+![test site](https://i.imgur.com/boO6GZw.png)
 
 ## 部署
 
@@ -72,6 +76,6 @@ repo_url: https://github.com/roy4801/docs.roy4801.tw
 
 * [MkDocsPlus](https://github.com/bwmarrin/MkDocsPlus)
 
-* https://github.com/ctf-wiki/ctf-wiki/blob/master/mkdocs-zh.yml
+* <https://github.com/ctf-wiki/ctf-wiki/blob/master/mkdocs-zh.yml>
 
-* https://squidfunk.github.io/mkdocs-material/extensions/pymdown/
+* <https://squidfunk.github.io/mkdocs-material/extensions/pymdown/>
