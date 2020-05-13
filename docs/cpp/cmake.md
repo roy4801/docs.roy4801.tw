@@ -1,5 +1,7 @@
 # CMake
 
+## Commandline
+
 * Generate
 	* [CMake Generators](https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html)
 
@@ -33,6 +35,19 @@ cmake --build <build_dir> --target install
 # makefile
 cd <build_dir> && make install
 ```
+
+## `CMakeLists.txt`
+
+* Set compile option for a target
+```
+target_compile_options(target_name
+    PUBLIC -optionA -optionB ...
+)
+```
+	* e.g.
+	```
+	-Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Woverloaded-virtual -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference -Wno-sign-compare
+	```
 
 ## References
 
