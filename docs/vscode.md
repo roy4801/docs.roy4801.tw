@@ -8,3 +8,18 @@
 * fold/expand block
 	* fold `ctrl+shift+{`
 	* expand `ctrl+shift+}`
+
+### macos
+
+* command ⌘
+* option ⌥
+* control ⌃
+* shift ⇧
+
+* indent
+	* left `cmd+{`
+	* right `cmd+}`
+
+* fold/expand block
+	* fold `cmd+opt+{`
+	* expand `cmd+opt+}`
