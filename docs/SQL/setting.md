@@ -57,7 +57,7 @@ mysqladmin -u user -p'old' password 'new'
 * Comment `bind-address`
 	* mysql
 		* <= 5.5 `/etc/mysql/my.cnf`
-		* >= 5.6 `/etc/mysql/mysql.conf.d/mysqld.cnf`
+		* \>= 5.6 `/etc/mysql/mysql.conf.d/mysqld.cnf`
 	* mariadb: `/etc/mysql/mariadb.conf.d/50-server.cnf`
 
 * Restart mysql service
