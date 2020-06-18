@@ -46,6 +46,15 @@ git clone --recursive <url to the repo>
 git submodule update --init --recursive
 ```
 
+## Other
+
+* Clean
+
+```
+git config --local credential.helper ""
+git push origin master
+```
+
 ## References
 
 Git Submodule 用法筆記
