@@ -5,9 +5,6 @@ a command-line tool for laravel
 ## Config
 
 - Reload config
-```bash=
+```bash
 php artisan config:cache
 ```
-
-
-

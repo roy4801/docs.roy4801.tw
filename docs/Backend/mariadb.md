@@ -2,12 +2,12 @@
 
 ## Installation
 
-```bash=
+```bash
 sudo apt install mariadb-server
 ```
 
 * Interactive secure setting
-```bash=
+```bash
 sudo mysql_secure_installation
 ```
 

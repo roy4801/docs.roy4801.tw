@@ -3,7 +3,8 @@
 ## Installation
 
 - CentOS7
-```bash=
+
+```
 sudo yum install epel-release
 sudo yum install supervisor
 ```
@@ -14,11 +15,11 @@ sudo yum install supervisor
         - `/etc/supervisor/conf.d`
 
 ## Configuration
-### systemd config
+### Config for systemd
 
 * File @ `/etc/systemd/system/supervisord.service`
 
-```=
+```
 [Unit]
 Description=Supervisor daemon
 
@@ -35,11 +36,11 @@ RestartSec=42s
 WantedBy=multi-user.target
 ```
 
-Commands
+* Commands
 
-```bash=
-systemctl enable supervisord.service
-```
+    ```
+    systemctl enable supervisord.service
+    ```
 
 ### Config for supervisor
 

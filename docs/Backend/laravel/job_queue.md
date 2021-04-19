@@ -3,7 +3,7 @@
 ## Setup
 ### Databawse
 
-```bash=
+```bash
 php artisan queue:table
 php artisan queue:failed-table
 php artisan migrate
@@ -11,11 +11,11 @@ php artisan migrate
 
 ### Redis
 
-* see use_redis_as_mq.md
+* see [use_redis_as_mq](/Backend/laravel/use_redis_as_mq/)
 
 ## Usage
 
-```bash=
+```bash
 # Restart the worker
 php artisan queue:restart
 ```
@@ -43,7 +43,7 @@ php artisan queue:restart
 
 - Start the processes
 
-```bash=
+```bash
 sudo supervisorctl reread
 sudo supervisorctl update
 sudo supervisorctl start laravel-worker:*

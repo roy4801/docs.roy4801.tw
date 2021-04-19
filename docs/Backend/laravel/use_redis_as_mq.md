@@ -2,10 +2,14 @@
 ## Use predis
 
 - install
-`composer require predis/predis`
+```
+composer require predis/predis
+```
 
 ## Use php-redis
+```
 sudo yum install -y php72-php-pecl-redis
+```
 
 ## Config
 
@@ -20,7 +24,6 @@ REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
 
-
 ## Ref
 
-https://laravel.com/docs/7.x/queues
+<https://laravel.com/docs/7.x/queues>
