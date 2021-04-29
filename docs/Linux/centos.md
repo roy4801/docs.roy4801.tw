@@ -41,3 +41,17 @@ WantedBy=multi-user.target
 ```
 systemctl daemon-reload
 ```
+
+## Setting up the network
+
+```
+cd /etc/sysconfig/network-scripts/
+sudo vi ifcfg-eXX
+
+IPADDR, PREFIX, GATEWAY, DNS1, DNS2
+
+sudo ifdown ifcfg-eXX
+sudo ifup ifcfg-eXX
+```
+
+
