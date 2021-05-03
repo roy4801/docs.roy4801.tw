@@ -2,7 +2,7 @@
 
 * Make a wrapper for function and provide a syntatic sugar
 
-```python
+```python linenums="1"
 import functools
 def my_decorator(func):
     @functools.wraps(func)

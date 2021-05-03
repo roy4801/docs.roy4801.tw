@@ -1,7 +1,8 @@
 # Texture
 
 * Bind texture
-```
+
+```c
 // >= OpenGL 4.5
 glBindTextureUnit(unit, texture)
 // < OpenGL 4.5

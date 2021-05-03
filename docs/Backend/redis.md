@@ -25,7 +25,7 @@ maxmemory-policy allkeys-lru
 
 ### CentOS7
 
-```bash=
+```bash
 # install
 sudo yum -y install epel-release
 sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
@@ -43,7 +43,7 @@ sudo systemctl start redis
 
 ## CLI
 
-```bash=
+```bash
 # ping redis
 redis-cli ping
 

@@ -2,7 +2,7 @@
 
 ## realpath
 
-```c
+```c linenums="1"
 #include <limits.h>
 #include <stdlib.h>
 
@@ -14,7 +14,7 @@ char *p = realpath("../path/to/files", path);
 
 * Use `readlink` on `/proc/self/fd/XXX` (Linux)
 
-```c
+```c linenums="1"
 char fdpath[PATH_MAX];
 snprintf(fdpath, sizeof(fdpath), "/proc/self/fd/%d", fd);
 int siz = readlink(fdpath, buf, buf_size);
@@ -24,7 +24,7 @@ if(siz != -1)
 
 * Use `fcntl`
 
-```c
+```c linenums="1"
 #include <sys/syslimits.h>
 #include <fcntl.h>
 

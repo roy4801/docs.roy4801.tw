@@ -2,7 +2,7 @@
 
 ## string format malloc
 
-```c
+```c linenums="1"
 #define ssprintf(...) \
     ({                \
         int _ss_size = snprintf(0, 0, ##__VA_ARGS__);           \

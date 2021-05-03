@@ -8,10 +8,14 @@ repo_url: https://github.com/roy4801/docs.roy4801.tw
 
 markdown_extensions:
   - admonition  #  note blocks, warning blocks -- https://github.com/mkdocs/mkdocs/issues/1659
-  - markdown.extensions.codehilite:
-      guess_lang: false
+  # - markdown.extensions.codehilite:
+  #     guess_lang: false
   - toc:
       permalink: true
+  - pymdownx.highlight:
+
+  - pymdownx.superfences
+      
 
 # nav:
 # - Home: 'index.md'
