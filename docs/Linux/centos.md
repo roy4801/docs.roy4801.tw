@@ -54,4 +54,10 @@ sudo ifdown ifcfg-eXX
 sudo ifup ifcfg-eXX
 ```
 
+## Keys
+
+```
+sudo bash -c "curl https://www.centos.org/keys/RPM-GPG-KEY-CentOS-Official > /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial"
+sudo yum update -y
+```
 
