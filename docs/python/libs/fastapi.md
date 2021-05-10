@@ -84,6 +84,8 @@ async def read_file(file_path: str):
 - Optional parameters
 
     ```python linenums="1"
+    from typing import Optional
+
     @app.get("/items/{item_id}")
     async def read_item(item_id: str, q: Optional[str]=None):
         if q:
@@ -121,7 +123,57 @@ async def create_item(item: Item):
 
 ### Not use Pydantic model
 
-TODO
+!!!warning
+    Must use with other model.
+
+```python linenums="1"
+class User(BaseModel):
+    username: str
+    full_name: Optional[str] = None
+
+@app.post('/')
+async def index(user: User, a: int = Body(...)):
+    return {'a': a, **user.dict()}
+```
+
+<img src="https://i.imgur.com/c4qswiA.png" width=50%>
+
+## Form
+
+!!!warning
+    Install `python-multipart` first. `pip install python-multipart`
+
+```python linenums="1"
+from fastapi import Form
+
+@app.post('/')
+async def index(user: str=Form(...), passwd: str=Form(...)):
+    return {'user': user, 'passwd': passwd}
+```
+
+<img src="https://i.imgur.com/zKKTtMJ.png" width=50%>
+
+!!!info
+    Data form 通常是 encode 成 `application/x-www-form-urlencoded`，但如果有要傳檔案的話，就會 encode 成 `multipart/form-data`
+    詳見: <https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST>
+
+!!!warning
+    `Form()` 和 `Body()` 混用可能導致非預期結果: 因為 HTML form 是用 `application/x-www-form-urlencoded` 並非 `application/json` 所以試圖用 `Body()` 來拿 JSON 是錯的
+
+## Template
+
+Need to install `jinja2`
+
+```python linenums="1"
+from starlette.templating import Jinja2Templates
+
+templates = Jinja2Templates(directory='templates')
+
+@app.get('/')
+async def main(request: Request):
+    return template.TemplateResponse('index.html', {'request': request})
+```
+
 
 ## Endpoints
 ### Http
