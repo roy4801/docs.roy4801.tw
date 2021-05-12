@@ -95,10 +95,70 @@ async def read_file(file_path: str):
 
 - Allow for multiple path parameters and query parameters at the same time. No nee
 
+### Validations
+
+!!!warning
+    **Notice** It is not `#!python Optional` make FastAPI know the value is optional; The default value `= None` made it happened.
+
+- Optional
+
+    ```python linenums="1" hl_lines="4"
+    from typing import Optional
+
+    @app.get('/items/')
+    def get_items(q: Optional[str] = None):
+        # ...
+    ```
+
+- Query: provide additional validations for the query parameter
+    - e.g. Limit the character length
+
+    ```python linenums="1"
+    from fastapi import Query
+
+    @app.get('/optional/')
+        def A(q: Optional[str] = Query(None, max_length=50)):
+            # ...
+
+    @app.get('/required/')
+        def B(q: Optional[str] = Query(..., max_length=50)):
+            # ...
+    ```
+
+    - parameters:
+        - `min_length`
+        - `max_length`
+        - `regex`
+
+### List / multiple values
+
+You can declare the parameter as a list to receive multiple values.
+
+```python linenums="1"
+@app.get("/items/")
+async def read_items(q: Optional[List[str]] = Query(None)):
+    query_items = {"q": q}
+    return query_items
+```
+
+THe URL looks like
+
+```
+http://localhost:8000/items/?q=foo&q=bar
+```
+
+And the value of `q` is
+
+```
+['foo', 'bar']
+```
+
 ## Request Body
 
 Use [`Pydantic`](https://pydantic-docs.helpmanual.io/) to delare the request body.
-Benefits:
+
+Advantages:
+
 - Read the request body as JSON
 - Convert the corresponding type
 - Validate the data
@@ -121,7 +181,7 @@ async def create_item(item: Item):
 
 <img src="https://i.imgur.com/3S2HPQS.png" width=50%>
 
-### Not use Pydantic model
+### Not using Pydantic model
 
 !!!warning
     Must use with other model.
@@ -139,7 +199,7 @@ async def index(user: User, a: int = Body(...)):
 <img src="https://i.imgur.com/c4qswiA.png" width=50%>
 
 ## Form
-
+ 
 !!!warning
     Install `python-multipart` first. `pip install python-multipart`
 
@@ -157,8 +217,36 @@ async def index(user: str=Form(...), passwd: str=Form(...)):
     Data form 通常是 encode 成 `application/x-www-form-urlencoded`，但如果有要傳檔案的話，就會 encode 成 `multipart/form-data`
     詳見: <https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST>
 
-!!!warning
+!!!danger
     `Form()` 和 `Body()` 混用可能導致非預期結果: 因為 HTML form 是用 `application/x-www-form-urlencoded` 並非 `application/json` 所以試圖用 `Body()` 來拿 JSON 是錯的
+
+TODO
+
+## Cookie
+
+- Cookie parameter
+
+```python linenums="1" hl_lines="4"
+from fastapi import Cookie
+
+@app.get('/needCookie')
+def need_cookie_route(test: Optional[str] = Cookie(...)):
+    return test
+```
+
+- Set cookie
+
+```python linenums="1" hl_lines="5"
+from fastapi import Response
+
+@app.get('/cookie')
+def set_cookie(response: Response):
+    response.set_cookie(key='test', value='fuck you')
+    return {'message': 'success'}
+```
+
+<https://fastapi.tiangolo.com/advanced/response-cookies/>
+<https://fastapi.tiangolo.com/tutorial/cookie-params/>
 
 ## Template
 
