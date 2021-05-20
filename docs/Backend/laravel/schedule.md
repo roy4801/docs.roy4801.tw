@@ -57,28 +57,41 @@ $schedule->exec('shell command')->daily();
 - `->cron('* * * * *')` Cron
 
 - Minute
-    - `->everyXMinute[s]()` Every X minutes $X \in {1,2,3,4,5,10,15,30}$
+    - `->everyXMinute[s]()`
+        - Every X minutes $X \in {1,2,3,4,5,10,15,30}$
         - e.g. `->everyMinute()`, `->everyFiveMinutes()`
 
 -Hour
-    - `->hourly()` every hour
-    - `->hourlyAt(X)` Every hour at X minutes
-    - `->everyXHours()` Every X hours $X \in {2, 3, 4, 6}$
+    - `->hourly()`
+        - every hour
+    - `->hourlyAt(X)`
+        - Every hour at X minutes
+    - `->everyXHours()`
+        - Every X hours $X \in {2, 3, 4, 6}$
 
 - Day
-    - `->daily()` Daily at midnight
-    - `->dailyAt('AA:BB')` Daily at AA:BB
-    - `->twiceDaily(1, 13);` Daily at 1:00 & 13:00
+    - `->daily()`
+        - Daily at midnight
+    - `->dailyAt('AA:BB')`
+        - Daily at AA:BB
+    - `->twiceDaily(1, 13);`
+        - Daily at 1:00 & 13:00
 
 - Week
-    - `->weekly()` Every Sunday at 0:00
-    - `->weeklyOn(1, '8:00')` Every X day at Time
+    - `->weekly()`
+        - Every Sunday at 0:00
+    - `->weeklyOn(1, '8:00')`
+        - Every X day at Time
 
 - Month
-    - `->monthly()` Eveny first day (0:00) of the month
-    - `->monthlyOn(4, '15:00')` Every 4th day of the month (15:00)
-    - `->twiceMonthly(1, 16, '13:00')` Every month on the 1st and 16th at 13:00
-    - `->lastDayOfMonth('15:00');`  The last day of the month at 15:00
+    - `->monthly()`
+        - Eveny first day (0:00) of the month
+    - `->monthlyOn(4, '15:00')`
+        - Every 4th day of the month (15:00)
+    - `->twiceMonthly(1, 16, '13:00')`
+        - Every month on the 1st and 16th at 13:00
+    - `->lastDayOfMonth('15:00');`
+        - The last day of the month at 15:00
 
 - Year
     - `->yearly();`
