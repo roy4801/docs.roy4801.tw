@@ -31,14 +31,38 @@ Model::where('condition')
 ->get()
 ```
 
+## Table
+
+```php linenums="1"
+DB::table('table');
+```
+
 ## Transcation
 
 https://dev.to/inspector/resolve-mysql-lock-wait-timeout-dealing-with-laravel-queues-and-jobs-4a6g
 
-```
+```php linenums="1"
 DB::transaction(function () {
     DB::table('users')->update(['votes' => 1]);
 
     DB::table('posts')->delete();
 }, 5);
+```
+
+- Reappempts
+
+```php linenums="1"
+DB::transaction(function () {
+	/* ... */
+}, 5);
+```
+
+### Manually
+
+```php linenums="1"
+DB::beginTransaction();
+
+DB::rollBack();
+
+DB::commit();
 ```
