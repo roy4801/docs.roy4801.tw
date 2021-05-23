@@ -47,7 +47,7 @@ ssh localhost -p 12345
 * SOCK5 proxy
 
 ```bash
-ssh -ND 0.0.0.0:8080 -p 12345 pi@localhost
+ssh -gfND 8080 username@<your host>
 ```
 
 > TODO: autossh
