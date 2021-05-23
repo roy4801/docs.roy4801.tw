@@ -31,6 +31,8 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 
+use Tests\TestCase // better
+
 class ExampleTest extends TestCase
 {
     /**
@@ -48,7 +50,7 @@ class ExampleTest extends TestCase
 - Run the test
 
 ```bash
-php artisan test
+php artisan test [--group name] [/path/to/test.php]
 ```
 
 !!!danger
