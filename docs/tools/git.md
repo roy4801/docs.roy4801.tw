@@ -11,6 +11,15 @@ git rm --cached {someFile}
 git rm --cached -r {someDir}
 ```
 
+## Edit a commit
+
+- autosquash
+
+```bash
+git commit -m "fixup! <msg/hash>"
+git rebase <hash>~N -i --autosquash
+```
+
 ## submodule
 
 * Add submodule
