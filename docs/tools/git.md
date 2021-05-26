@@ -1,5 +1,16 @@
 # git
 
+## Remove from git but keep local
+
+```
+# Added but not commited
+git reset
+
+# Commited
+git rm --cached {someFile}
+git rm --cached -r {someDir}
+```
+
 ## submodule
 
 * Add submodule
