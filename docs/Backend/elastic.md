@@ -1,7 +1,5 @@
 # Elasticsearch
 
-[toc]
-
 ## Terms
 
 ES 是 schemaless 的，資料格式可以隨意定，非常適合用來做全文檢索 or 查詢與資料的相關性
@@ -69,11 +67,11 @@ POST logs-my_app-default/_doc
 ```
 
 * PUT
-  * `PUT _index/_create/ID`
-  * may cause performance issues
+    * `PUT _index/_create/ID`
+    * may cause performance issues
 
 ### Add multiple documents
-    * Use NDJSON
+  * Use NDJSON
 
 ```
 PUT logs-my_app-default/_bulk
@@ -83,51 +81,50 @@ PUT logs-my_app-default/_bulk
 { "@timestamp": "2099-05-08T16:25:42.000Z", "event": { "original": "192.0.2.255 - - [08/May/2099:16:25:42 +0000] \"GET /favicon.ico HTTP/1.0\" 200 3638" } }
 
 ```
-:::spoiler Outputs
-```
-{
-    "took": 3,
-    "errors": false,
-    "items": [
-        {
-            "create": {
-                "_index": ".ds-logs-my_app-default-2021.06.28-000001",
-                "_type": "_doc",
-                "_id": "RrjaW3oBJ-UWGrIG7nrd",
-                "_version": 1,
-                "result": "created",
-                "_shards": {
-                    "total": 2,
-                    "successful": 1,
-                    "failed": 0
-                },
-                "_seq_no": 2,
-                "_primary_term": 3,
-                "status": 201
-            }
-        },
-        {
-            "create": {
-                "_index": ".ds-logs-my_app-default-2021.06.28-000001",
-                "_type": "_doc",
-                "_id": "R7jaW3oBJ-UWGrIG7nrd",
-                "_version": 1,
-                "result": "created",
-                "_shards": {
-                    "total": 2,
-                    "successful": 1,
-                    "failed": 0
-                },
-                "_seq_no": 3,
-                "_primary_term": 3,
-                "status": 201
-            }
-        }
-    ]
-}
-```
-:::
 
+??? note
+    ```
+    {
+        "took": 3,
+        "errors": false,
+        "items": [
+            {
+                "create": {
+                    "_index": ".ds-logs-my_app-default-2021.06.28-000001",
+                    "_type": "_doc",
+                    "_id": "RrjaW3oBJ-UWGrIG7nrd",
+                    "_version": 1,
+                    "result": "created",
+                    "_shards": {
+                        "total": 2,
+                        "successful": 1,
+                        "failed": 0
+                    },
+                    "_seq_no": 2,
+                    "_primary_term": 3,
+                    "status": 201
+                }
+            },
+            {
+                "create": {
+                    "_index": ".ds-logs-my_app-default-2021.06.28-000001",
+                    "_type": "_doc",
+                    "_id": "R7jaW3oBJ-UWGrIG7nrd",
+                    "_version": 1,
+                    "result": "created",
+                    "_shards": {
+                        "total": 2,
+                        "successful": 1,
+                        "failed": 0
+                    },
+                    "_seq_no": 3,
+                    "_primary_term": 3,
+                    "status": 201
+                }
+            }
+        ]
+    }
+    ```
 
 ### Search data
 
@@ -197,9 +194,8 @@ GET logs-my_app-default/_search
 
 ## `_doc` Mapping Type
 
-:::warning
-Deprecated
-:::
+!!! warning
+    Deprecated
 
 To separate collections inside an index
 
