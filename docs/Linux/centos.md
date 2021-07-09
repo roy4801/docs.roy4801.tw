@@ -1,5 +1,12 @@
 # CentOS
 
+## yum
+
+* List installed packages
+```
+sudo yum list installed
+```
+
 ## Install htop
 
 ```bash
