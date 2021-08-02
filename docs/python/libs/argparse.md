@@ -5,10 +5,10 @@
 ```python linenums="1"
 import argparse
 parser = argparse.ArgumentParser(description="xxx")
-parser.parse_args()
+args = parser.parse_args()
 ```
 
-* positional arguments
+* Positional Arguments
 
 ```python linenums="1"
 parser.add_argument("echo", help="echo the string you use here",
@@ -18,7 +18,7 @@ parser.add_argument("echo", help="echo the string you use here",
 args.echo # variable
 ```
 
-* optional arguments
+* Optional Arguments
 
 ```python linenums="1"
 parser.add_argument("-v", "--verbose", action="count", default=0, help="increase output verbosity")
@@ -31,13 +31,13 @@ if args.verbosity:
     print("verbosity turned on")
 ```
 
-	* Mutually exclusive
+* Mutually exclusive
 
-	```python linenums="1"
-	group = parser.add_mutually_exclusive_group()
-	group.add_argument("-v", "--verbose", action="store_true")
-	group.add_argument("-q", "--quiet", action="store_true")
-	```
+```python linenums="1"
+group = parser.add_mutually_exclusive_group()
+group.add_argument("-v", "--verbose", action="store_true")
+group.add_argument("-q", "--quiet", action="store_true")
+```
 
 ## Sub-commands
 

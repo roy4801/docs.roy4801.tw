@@ -6,6 +6,8 @@
     rundll32.exe sysdm.cpl,EditEnvironmentVariables
     ```
 
+* Device management: `devmgmt.msc`
+
 ## Reference
 
 Create Environment Variables Shortcut in Windows 10<br/>
