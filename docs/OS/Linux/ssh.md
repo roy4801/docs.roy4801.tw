@@ -15,6 +15,12 @@ OR
 $ ssh USER@HOST 'mkdir -p ~/.ssh;chmod 700 ~/.ssh;cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 ```
 
+* ssh-copy-id on windows
+
+```bash
+type %userprofile%\.ssh\id_rsa.pub | ssh <host> "cat >> .ssh/authorized_keys"
+```
+
 # sshd
 
 * Disable password authentication
