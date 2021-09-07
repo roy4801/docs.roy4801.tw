@@ -51,3 +51,19 @@ sudo supervisorctl start laravel-worker:*
 # Broadcast the restart message
 php artisan queue:restart
 ```
+
+## Job
+
+### Dispatch a job
+
+```php
+$data = [/* ... */];
+
+Job::dispatch($data);
+```
+
+- Dispatch a specific queue
+
+```php
+Job::dispatch($data)->onQueue("Name");
+```

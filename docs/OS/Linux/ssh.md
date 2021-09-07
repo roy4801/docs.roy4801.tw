@@ -15,6 +15,12 @@ OR
 $ ssh USER@HOST 'mkdir -p ~/.ssh;chmod 700 ~/.ssh;cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 ```
 
+* ssh-copy-id on windows
+
+```bash
+type %userprofile%\.ssh\id_rsa.pub | ssh <host> "cat >> .ssh/authorized_keys"
+```
+
 # sshd
 
 * Disable password authentication
@@ -47,7 +53,7 @@ ssh localhost -p 12345
 * SOCK5 proxy
 
 ```bash
-ssh -ND 0.0.0.0:8080 -p 12345 pi@localhost
+ssh -gfND 8080 username@<your host>
 ```
 
 > TODO: autossh

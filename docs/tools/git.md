@@ -1,5 +1,25 @@
 # git
 
+## Remove from git but keep local
+
+```
+# Added but not commited
+git reset
+
+# Commited
+git rm --cached {someFile}
+git rm --cached -r {someDir}
+```
+
+## Edit a commit
+
+- autosquash
+
+```bash
+git commit -m "fixup! <msg/hash>"
+git rebase <hash>~N -i --autosquash
+```
+
 ## submodule
 
 * Add submodule

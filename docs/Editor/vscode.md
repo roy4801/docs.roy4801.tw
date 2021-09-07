@@ -23,3 +23,11 @@
 * fold/expand block
 	* fold `cmd+opt+{`
 	* expand `cmd+opt+}`
+
+## Other
+
+- List extensions from CLI
+
+```bash
+code --list-extensions
+```
