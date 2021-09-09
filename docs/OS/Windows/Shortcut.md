@@ -1,4 +1,4 @@
-# Shortcut
+# Shortcut to settings
 
 * Edit environment variable window
 
