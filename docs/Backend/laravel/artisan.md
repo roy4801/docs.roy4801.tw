@@ -8,3 +8,7 @@ a command-line tool for laravel
 ```bash
 php artisan config:cache
 ```
+
+## Route
+
+- Reload routes

@@ -71,6 +71,16 @@ php artisan ui [bootstrap, vue, react] --auth
 
 * `/var/log/php-fpm/www-error.log`
 
+## Artisan
+
+### Route
+
+```
+php artisan route:cache
+php artisan route:list
+```
+
+
 ## Reference
 
 <https://getcomposer.org/download/>
