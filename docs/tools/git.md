@@ -75,7 +75,48 @@ git config --local credential.helper ""
 git push origin master
 ```
 
+* Remove submodules
+    * Delete lines in `.gitmodules` and `git add .gitmodules`
+    * Execute `rm ./.git/config`
+    * `git rm --cached path_to_submodule`
+    * `rm -rf .git/modules/path_to_submodule`
+    * Commit
+
+```bash
+# Remove the submodule entry from .git/config
+git submodule deinit -f path/to/submodule
+
+# Remove the submodule directory from the superproject's .git/modules directory
+rm -rf .git/modules/path/to/submodule
+
+# Remove the entry in .gitmodules and remove the submodule directory located at path/to/submodule
+git rm -f path/to/submodule
+```
+
+* Merge two different repos
+
+```bash
+# clone a & b
+cd a
+git filter-repo --to-subdirectory-filter a
+cd b
+git remote add a ../a
+git fetch a
+git merge --allow-unrelated-histories a/master
+git remote remove a
+```
+
+* Checkout to tag
+
+```bash
+git tag -l
+git checkout <tag>
+```
+
 ## References
 
 Git Submodule 用法筆記
 <https://blog.chh.tw/posts/git-submodule/>
+
+
+<https://stackoverflow.com/questions/1260748/how-do-i-remove-a-submodule/36593218#36593218>
