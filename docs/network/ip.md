@@ -1,9 +1,33 @@
 # ip
 
-* set ip addr and gateway
-```
+## `ip`
+
+* Setup the ip addr and gateway
+
+```bash linenums="1"
 ip addr add <ip>/24 dev ens160
 route add default gw <gateway>
+```
+
+## `/etc/network/interfaces`
+
+```
+vim /etc/network/interfaces
+
+auto lo
+iface lo inet loopback
+
+auto ensX
+iface ensX inet static
+address <IP>
+netmask 255.255.255.0
+gateway <gateway>
+```
+
+### NetworkManager
+
+```
+nmcli
 ```
 
 ## netplan
@@ -41,3 +65,21 @@ sudo netplan apply
 <https://netplan.io/>
 
 <https://netplan.io/examples/>
+
+Ubuntu Linux 18.04 設定靜態網路 IP 位址教學
+<https://blog.gtwang.org/linux/ubuntu-linux-1804-configure-network-static-ip-address-tutorial/>
+
+Ubuntu 網路設定 - 固定 IP
+<http://note.drx.tw/2008/02/ubuntu-ip.html>
+
+NetworkManager - ArchWiki
+<https://wiki.archlinux.org/title/NetworkManager>
+
+Ubuntu NetworkManager 使用要項
+<https://www.rocksaying.tw/archives/11777065.html>
+
+ubuntu 使用ifupdown 进行高级网络设置
+<https://www.cnblogs.com/yasmi/p/4843348.html>
+
+debian network docs
+<https://www.debian.org/doc/manuals/debian-reference/ch05.zh-tw.html>
