@@ -61,25 +61,17 @@ sudo netplan apply
 ```
 
 ### Ref
-
 <https://netplan.io/>
-
 <https://netplan.io/examples/>
-
-Ubuntu Linux 18.04 設定靜態網路 IP 位址教學
+Ubuntu Linux 18.04 瑷畾闈滄厠缍茶矾 IP 浣嶅潃鏁欏
 <https://blog.gtwang.org/linux/ubuntu-linux-1804-configure-network-static-ip-address-tutorial/>
-
-Ubuntu 網路設定 - 固定 IP
+Ubuntu 缍茶矾瑷畾 - 鍥哄畾 IP
 <http://note.drx.tw/2008/02/ubuntu-ip.html>
-
 NetworkManager - ArchWiki
 <https://wiki.archlinux.org/title/NetworkManager>
-
-Ubuntu NetworkManager 使用要項
+Ubuntu NetworkManager 浣跨敤瑕侀爡
 <https://www.rocksaying.tw/archives/11777065.html>
-
-ubuntu 使用ifupdown 进行高级网络设置
+ubuntu 浣跨敤ifupdown 杩涜楂樼骇缃戠粶璁剧疆
 <https://www.cnblogs.com/yasmi/p/4843348.html>
-
 debian network docs
 <https://www.debian.org/doc/manuals/debian-reference/ch05.zh-tw.html>
