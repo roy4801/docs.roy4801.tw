@@ -1,5 +1,14 @@
 # docker
 
+## Images
+
+```bash
+# remove dangling images
+docker rmi -f $(docker images -f dangling=true -q)
+# remove dangling volumes
+docker volume rm $(docker volume ls -qf dangling=true)
+```
+
 ## Installation
 
 ### Ubuntu

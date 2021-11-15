@@ -20,6 +20,12 @@ git commit -m "fixup! <msg/hash>"
 git rebase <hash>~N -i --autosquash
 ```
 
+## Quick fix the last commit
+
+```bash
+git commit --amend --no-edit
+```
+
 ## submodule
 
 * Add submodule
