@@ -106,3 +106,35 @@ sudo cp /opt/librenms/misc/librenms.logrotate /etc/logrotate.d/librenms
 sudo su - librenms
 ./validate.php
 ```
+
+### Nagios Plugins - Services
+
+```bash linenums="1"
+sudo apt install monitoring-plugins
+chmod +x /usr/lib/nagios/plugins/*
+```
+
+- Add the following line in `/etc/cron.d/librenms`
+
+```bash linenums="1"
+*/5 * * * * librenms /opt/librenms/services-wrapper.py 1
+```
+
+- Add these lines in the `config.php`
+
+```php linenums="1"
+$config['discover_services'] = true;
+$config['discover_services_templates'] = true;
+$config['show_services'] = 1;
+$config['nagios_plugins'] = "/usr/lib/nagios/plugins";
+```
+
+- Other plugins
+	- [The Monitoring Plugins Project](https://www.monitoring-plugins.org/)
+	- [pkg-nagios-plugins-contrib](https://github.com/bzed/pkg-nagios-plugins-contrib)
+	- <https://github.com/drewkerrigan/nagios-http-json>
+
+## References
+
+<https://docs.librenms.org/><br>
+<https://docs.librenms.org/Installation/Install-LibreNMS/>
