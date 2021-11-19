@@ -1,4 +1,4 @@
-# PHP laravel
+# PHP
 ### Ubuntu
 
 #### 20.04
@@ -64,7 +64,8 @@ sudo yum install php72 php72-php-fpm php72-php-gd php72-php-json php72-php-mbstr
 ```
 
 <https://www.cyberciti.biz/faq/how-to-install-php-7-2-on-centos-7-rhel-7/></br>
-<https://www.cyberciti.biz/faq/how-to-install-and-use-nginx-on-centos-7-rhel-7/>
+<https://www.cyberciti.biz/faq/how-to-install-and-use-nginx-on-centos-7-rhel-7/></br>
+<https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7>
 
 ## Usage
 
