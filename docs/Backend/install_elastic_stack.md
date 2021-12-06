@@ -47,6 +47,9 @@ network.bind_host: 0.0.0.0
 http.port: 9200
 ```
 
+- 如果設定 `0.0.0.0` 要跟著設定 `discovery`
+	- 單節點: `discovery.type: single-node`
+
 ### Security
 - xpack: es version `>= 6.3.0`
 
