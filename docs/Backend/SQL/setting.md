@@ -1,4 +1,4 @@
-# Setting
+# MySQL/MariaDB Setting
 
 ## User
 
@@ -22,7 +22,7 @@ MariaDB [mysql]> select user,host,plugin from user;
 ```
 
 * Create a user
-```sql
+```sql linenums="1"
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password; # 本機
 CREATE USER 'username'@'%' IDENTIFIED BY 'password; # 遠端
 ```
@@ -31,19 +31,23 @@ CREATE USER 'username'@'%' IDENTIFIED BY 'password; # 遠端
 	* `mysql_native_password`
 	* `unix_socket`/`auth_socket`
 	
-```
+```sql linenums="1"
 UPDATE user SET plugin='plugin_name' WHERE user='user_name';
 ```
 
 * Grant privileges [Ref](/sql/query/#privilege)
-```sql
+```sql linenums="1"
 GRANT ALL PRIVILEGES ON *.* TO 'username'@'host';
 FLUSH PRIVILEGES;
 ```
 
+```sql linenums="1"
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'sammy'@'remote_server_ip' WITH GRANT OPTION;
+```
+
 * Set password for a user
 
-```sql
+```sql linenums="1"
 SET PASSWORD FOR 'user'@'host' = PASSWORD('pass'); # <= MySQL 5.7.5
 ALTER USER 'user'@'host' IDENTIFIED BY 'pass';     # >= MySQL 5.7.6
 ```
@@ -62,7 +66,7 @@ mysqladmin -u user -p'old' password 'new'
 
 * Restart mysql service
 
-```bash
+```bash linenums="1"
 sudo systemctl restart mysql
 ```
 
@@ -78,3 +82,5 @@ MySQL 允許外部連入<br>
 <https://contemplator.github.io/blog/2018/06/06/Mysql-%E5%85%81%E8%A8%B1%E5%A4%96%E9%83%A8%E9%80%A3%E5%85%A5/>
 
 <http://itman.in/en/mysql-add-user-for-remote-access/>
+
+<https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql>
