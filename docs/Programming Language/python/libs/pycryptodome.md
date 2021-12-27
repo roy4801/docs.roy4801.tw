@@ -77,3 +77,5 @@ plaintext = unpad(cipher.decrypt(enc), AES.block_size)
 <https://hackmd.io/@Not/Pbkdf2>
 
 <https://stackoverflow.com/questions/30056762/rsa-encryption-and-decryption-in-python>
+
+<https://pastebin.com/tfH13zpA>
