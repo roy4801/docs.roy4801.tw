@@ -6,6 +6,26 @@
 /ip firewall filter add action=accept chain=input disabled=no dst-port=8291 protocol=tcp
 ```
 
+## Enabling HTTPS on MikroTik
+
+- Create certificates
+
+```linenums="1"
+/certificate
+add name=root-cert common-name=MyRouter days-valid=3650 key-usage=key-cert-sign,crl-sign
+sign root-cert
+add name=https-cert common-name=MyRouter days-valid=3650
+sign ca=root-cert https-cert
+```
+
+- Enable `www-ssl` service and disable `www` service
+
+```linenums="1"
+/ip service
+set www-ssl certificate=https-cert disabled=no
+set www disabled=yes
+```
+
 ## DNS Server
 
 ![](https://i.imgur.com/Pei98qs.png)

@@ -11,6 +11,13 @@ docker volume rm $(docker volume ls -qf dangling=true)
 
 ## Installation
 
+- Script
+
+```bash linenums="1"
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+```
+
 ### Ubuntu
 
 ```bash

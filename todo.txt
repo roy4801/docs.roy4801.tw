@@ -5,4 +5,8 @@ https://docs.python.org/3/howto/logging.html#logging-basic-tutorial
 https://docs.python.org/3/library/logging.html#formatter-objects
 
 
+# List loggers
+loggers = [logging.getLogger(name) for name in logging.root.manager.loggerDict]
+print(loggers)
+
 * gpg
