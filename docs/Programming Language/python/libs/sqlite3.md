@@ -120,3 +120,7 @@ cur.executescript('''
 ```
 
 > TODO: advanced usage
+
+## References
+
+<https://pythonexamples.org/python-sqlite3-tutorial/>
