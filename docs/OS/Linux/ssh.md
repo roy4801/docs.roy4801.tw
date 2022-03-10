@@ -51,6 +51,7 @@ ssh localhost -p 12345
 ```
 
 * SOCK5 proxy
+  - `-C` Compress
 
 ```bash
 ssh -gfND 8080 username@<your host>
