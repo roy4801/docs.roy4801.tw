@@ -72,6 +72,14 @@ git clone --recursive <url to the repo>
 git submodule update --init --recursive
 ```
 
+## pull
+
+- rebase
+```bash linenums="1"
+git pull --rebase
+git rebase --continue
+```
+
 ## Other
 
 * Clean
