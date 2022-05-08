@@ -48,3 +48,23 @@ add action=drop chain=input dst-port=53 protocol=tcp
 - Set static DNS record
 
 ![](https://i.imgur.com/gGYhxy2.png)
+
+## Setting DoH
+
+- Download Root CAs (In ROS terminal)
+```linenums="1"
+/tool fetch url=https://curl.se/ca/cacert.pem
+/certificate import file-name=cacert.pem passphrase=""
+```
+
+- Remove existing DNS setting
+- Add a static DNS entry for DoH hostname
+	- e.g. `cloudflare-dns.com -> 1.1.1.1`
+- Add `use DoH Server` and check `Verify DoH Certificate`
+	- e.g. `https://cloudflare-dns.com/dns-query`
+- Checking DNS status: https://1.1.1.1/help
+
+- References
+	- MikroTik Tutorial: How to enable DNS over HTTPS (DoH): <https://jcutrer.com/howto/networking/mikrotik/mikrotik-dns-over-https>
+	- [教學] Mikrotik 如何使用 DNS over HTTPS ( DoH ): <https://mahirmax.blogspot.com/2020/08/mikrotik-dns-over-https-doh.html?m=0>
+	- HTTPS 什麼是根憑證 root certificate: <https://matthung0807.blogspot.com/2021/03/https-what-is-root-certificate.html>
