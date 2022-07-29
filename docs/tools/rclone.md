@@ -24,6 +24,15 @@ rclone size gdrive:
 rclone sync -P --fast-list --transfers=32 gdrive:/ .
 ```
 
+- Show google drive shared with me: `--drive-shared-with-me`
+
+- Limit speed: `--bwlimit 8M`
+
+- Cheatsheet
+```bash linenums="1"
+rclone copy -P --fast-list --bwlimit 8M --drive-shared-with-me drive:/A ./A
+```
+
 ## Reference
 
 <https://www.dmuth.org/back-up-your-google-drive-files-with-rclone/>

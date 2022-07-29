@@ -60,6 +60,14 @@ sudo netplan try
 sudo netplan apply
 ```
 
+## Change DNS server
+
+```bash linenums="1"
+sudo vim /etc/resolv.conf
+
+# nameserver 1.1.1.1
+```
+
 ### Ref
 <https://netplan.io/>
 <https://netplan.io/examples/>

@@ -52,6 +52,15 @@ tar cJvf name.tar.xz ...         # xz
 tar --lzma cvf name.tar.lzma ... # lzma
 ```
 
+* Pack but multithreaded
+
+```bash linenums="1"
+tar -I pigz -cf tarball.tgz files   # gz
+tar -I pbzip2 -cf tarball.tbz files # bz2
+tar -I pixz -cf tarball.txz files   # xz
+tar -I pxz -cf tarball.txz files    # xz
+```
+
 * Extract
 
 ```bash
