@@ -45,7 +45,14 @@ network:
         addresses:
         - 1.1.1.1
         - 8.8.8.8
+
+    ens161:
+      dhcp4: true
+
   version: 2
+
+
+
 ```
 
 * Test the config
