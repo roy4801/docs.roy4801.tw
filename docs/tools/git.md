@@ -20,6 +20,23 @@ git commit -m "fixup! <msg/hash>"
 git rebase <hash>~N -i --autosquash
 ```
 
+## Reset
+
+![](https://i.imgur.com/mAwTMCd.png)
+
+- Hard
+    - 直接回到該 commit
+
+```bash=
+git reset --hard <HEAD/hash>~N # 回到前 N 個
+```
+
+- Soft
+
+```bash=
+git reset --soft <hash>
+```
+
 ## Quick fix the last commit
 
 ```bash
@@ -78,6 +95,46 @@ git submodule update --init --recursive
 ```bash linenums="1"
 git pull --rebase
 git rebase --continue
+```
+
+## cherry-pick
+
+Pick a specific commit to HEAD
+
+```bash=
+git cherry-pick <SHA1> <SHA2> ...
+```
+
+- Conflict?
+    - `git cherry-pick --continue`
+
+- Edit commit message? Use `-e`
+    - `git cherry-pick <sha> -e`
+
+## Revert
+
+已經被推上去的 commit 發現錯誤，可以用 revert 來修復
+
+```bash=
+git revert <Hash>
+```
+
+## reflog - 移動紀錄
+
+- HEAD log
+    ```bash=
+    git reflog
+    ```
+
+- branch log
+    ```bash=
+    git reflog <branch>
+    ```
+
+## Search commit
+
+```bash=
+git log --grep "<pattern>"
 ```
 
 ## Other
