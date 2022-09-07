@@ -41,6 +41,32 @@ sudo iptables -nvL [-t table]
 sudo iptables -t nat -F
 ```
 
+## Persistent
+
+- Write iptable configs in `/etc/network/interfaces`
+
+```
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+allow-hotplug ens18
+auto ens18
+iface ens18 inet static
+address 1.2.3.4/24
+gateway 1.2.3.1
+dns-nameservers 1.1.1.1
+
+auto ens19
+iface ens19 inet static
+address 10.0.0.254
+netmask 255.255.255.0
+post-up iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o ens18 -j MASQUERADE
+```
+
+- Use `iptables-persistent`
+
 ## References
 
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/4/html/security_guide/s1-firewall-ipt-fwd
