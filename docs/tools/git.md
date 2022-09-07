@@ -137,6 +137,23 @@ git revert <Hash>
 git log --grep "<pattern>"
 ```
 
+## github two account 
+
+```bash=
+ssh-keygen -t rsa -C "your-email-address"
+# Remember to enter filename id_rsaXXXX
+```
+
+- Add to `~/.ssh/config`
+```
+Host github-COMPANY
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa_COMPANY
+```
+
+- Remember to add your ssh key to github & use different user.name & user.email in repos
+
 ## Other
 
 * Clean
