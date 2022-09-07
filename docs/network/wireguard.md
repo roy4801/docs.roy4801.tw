@@ -69,6 +69,26 @@ $ wg-quick down wg0  # Turn down
 $ wg
 ```
 
+#### Auto start on linux
+
+- Start
+
+```bash
+sudo systemctl enable wg-quick@wg0.service
+sudo systemctl daemon-reload
+sudo systemctl start wg-quick@wg0
+```
+
+- Stop
+
+```bash
+sudo systemctl stop wg-quick@wg0
+sudo systemctl disable wg-quick@wg0.service
+sudo rm -i /etc/systemd/system/wg-quick@wg0*
+sudo systemctl daemon-reload
+sudo systemctl reset-failed
+```
+
 ### Client
 
 #### Linux
