@@ -26,3 +26,7 @@
 
 - Change keyboard shortcut
     - ![](https://i.imgur.com/0yUCMSG.png)
+
+### Shortcuts
+
+- Ctrl+M+M: Fold/Unfold code
