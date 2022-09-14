@@ -3,7 +3,11 @@
 ## Installation
 
 ```bash linenums="1"
-pip install fastapi[all] uvicorn[standard]
+pip install fastapi[all]
+
+or
+
+pip install fastapi uvicorn[standard]
 ```
 
 Test to see if it installed successfully
