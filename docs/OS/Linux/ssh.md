@@ -59,6 +59,18 @@ ssh -gfND 8080 username@<your host>
 
 > TODO: autossh
 
+# Windows sftp
+
+- Setting > Apps > Optional features > Add an optional feature > OpenSSH Server
+
+- Powershell Run as administrator
+
+```powershell
+Start-Service sshd
+Set-Service -Name sshd -StartupType 'Automatic'
+New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+```
+
 # References
 
 <https://kb.iu.edu/d/aews>
@@ -70,3 +82,7 @@ Reverse SSH Tunnel 反向打洞實錄<br>
 
 SSH Tunnel 通道打造加密 Proxy，透過外部 Linux 伺服器上網<br>
 <https://blog.gtwang.org/linux/ssh-tunnel-socks-proxy-forwarding-tutorial/>
+
+<https://berglas.github.io/dest/articles/2020/7/note_SFTP_setting_1.html>
+
+<https://winscp.net/eng/docs/guide_windows_openssh_server>
