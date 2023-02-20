@@ -17,6 +17,7 @@
     - Ctrl+F4: Close Preview
     - Ctrl+T, R: Open recently closed files
     - Shift+Esc: Close Window
+    - Ctrl+K, Ctrl+X: Insert snippet
 
 > Change close tab shortcut
 > https://stackoverflow.com/questions/32735755/visual-studio-shortcut-to-close-window-not-working
