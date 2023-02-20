@@ -42,6 +42,12 @@ DNS = 1.1.1.1
 MTU = 1420
 ```
 
+- iptables
+```
+iptables -A FORWARD -i wg0 -j ACCEPT && iptables -A FORWARD -o wg0 -j ACCEPT && iptables -t nat -A POSTROUTING -o enp1s0 -j MASQUERADE
+iptables -D FORWARD -i wg0 -j ACCEPT && iptables -D FORWARD -o wg0 -j ACCEPT && iptables -t nat -D POSTROUTING -o enp1s0 -j MASQUERADE
+```
+
 !!!info
 	The network interface must set to the one which connects to the internet<br>
 	Use `ip addr` to check.
@@ -89,6 +95,10 @@ sudo systemctl daemon-reload
 sudo systemctl reset-failed
 ```
 
+!!!warning
+	Q: `/usr/bin/wg-quick: line 31: resolvconf: command not found`
+	A: `ln -s /usr/bin/resolvectl /usr/local/bin/resolvconf`
+
 ### Client
 
 #### Linux
@@ -113,3 +123,12 @@ perm : `$ chmod 600 /etc/wireguard/wg0.conf`
 ![](https://i.imgur.com/aUnpsKs.png)
 
 ![](https://i.imgur.com/lgIGhUz.png)
+
+## wireguard-ui
+
+A wireguard web interface: https://github.com/ngoduykhanh/wireguard-ui
+
+```bash
+git clone https://github.com/ngoduykhanh/wireguard-ui.git
+cd wireguard-ui && docker-compose up
+```
