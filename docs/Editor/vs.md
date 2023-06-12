@@ -31,3 +31,7 @@
 ### Shortcuts
 
 - Ctrl+M+M: Fold/Unfold code
+
+### Extensions
+
+- Path: `%LocalAppData%\Microsoft\VisualStudio\<Visual Studio version>\Extensions\`
