@@ -72,7 +72,39 @@ repo_url: https://github.com/roy4801/docs.roy4801.tw
 
 > Github page: 在`docs/`底下加入`CNAME`可以自訂domain
 
-## 其他
+### 使用 github-action 自動部署
+
+使用 [mhausenblas/mkdocs-deploy-gh-pages](https://github.com/marketplace/actions/deploy-mkdocs) 偵測 push 時自動部署到 `gh-page` 分支
+
+新增檔案 `.github/workflows/deploy.yml` 如下，其中的 `GITHUB_TOKEN` 會自動產生
+```yaml
+name: Publish docs via GitHub Pages
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v2
+
+      - name: Deploy docs
+        uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CUSTOM_DOMAIN: docs.roy4801.tw
+          CONFIG_FILE: mkdocs.yml
+          EXTRA_PACKAGES: build-base
+          # GITHUB_DOMAIN: github.myenterprise.com
+          REQUIREMENTS: requirements.txt
+```
+
+## 參考
 
 * [MkDocsPlus](https://github.com/bwmarrin/MkDocsPlus)
 
