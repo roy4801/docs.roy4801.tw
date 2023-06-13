@@ -5,6 +5,9 @@
 ```bash
 $ mkdir -p ~/.ssh && chmod 700 ~/.ssh   # Create the .ssh directory
 $ ssh-keygen  # Creates id_rsa* in ~/.ssh
+
+# With comment & path
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f $HOME/.ssh/id_rsa
 ```
 
 * Copy the ssh public key to server
