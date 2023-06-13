@@ -27,13 +27,13 @@ git rebase <hash>~N -i --autosquash
 - Hard
     - 直接回到該 commit
 
-```bash=
+```bash
 git reset --hard <HEAD/hash>~N # 回到前 N 個
 ```
 
 - Soft
 
-```bash=
+```bash
 git reset --soft <hash>
 ```
 
@@ -101,7 +101,7 @@ git rebase --continue
 
 Pick a specific commit to HEAD
 
-```bash=
+```bash
 git cherry-pick <SHA1> <SHA2> ...
 ```
 
@@ -115,31 +115,31 @@ git cherry-pick <SHA1> <SHA2> ...
 
 已經被推上去的 commit 發現錯誤，可以用 revert 來修復
 
-```bash=
+```bash
 git revert <Hash>
 ```
 
 ## reflog - 移動紀錄
 
 - HEAD log
-    ```bash=
+    ```bash
     git reflog
     ```
 
 - branch log
-    ```bash=
+    ```bash
     git reflog <branch>
     ```
 
 ## Search commit
 
-```bash=
+```bash
 git log --grep "<pattern>"
 ```
 
 ## github two account 
 
-```bash=
+```bash
 ssh-keygen -t rsa -C "your-email-address"
 # Remember to enter filename id_rsaXXXX
 ```
@@ -161,6 +161,12 @@ Host github-COMPANY
 ```
 git config --local credential.helper ""
 git push origin master
+```
+
+* Set default pull rebase
+
+```
+git config --global pull.rebase true
 ```
 
 * Remove submodules

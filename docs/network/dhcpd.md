@@ -2,7 +2,7 @@
 
 - config: `/etc/dhcp/dhcpd.conf`
 
-```bash lib="1"
+```bash
 sudo systemctl restart isc-dhcp-server
 ```
 
