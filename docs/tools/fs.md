@@ -22,6 +22,11 @@
 	- 主要用於簡化路徑。
 	- `ln -s <src> <dst>`
 
+## Ubuntu expand disk
+
+https://gist.github.com/gjrdiesel/4e93d8743b71babb58dcba4ee049247c
+https://askubuntu.com/questions/116351/increase-partition-size-on-which-ubuntu-is-installed
+
 ### References
 
 Hard Link與Symbolic Link的比較
