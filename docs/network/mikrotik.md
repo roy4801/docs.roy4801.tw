@@ -68,3 +68,12 @@ add action=drop chain=input dst-port=53 protocol=tcp
 	- MikroTik Tutorial: How to enable DNS over HTTPS (DoH): <https://jcutrer.com/howto/networking/mikrotik/mikrotik-dns-over-https>
 	- [教學] Mikrotik 如何使用 DNS over HTTPS ( DoH ): <https://mahirmax.blogspot.com/2020/08/mikrotik-dns-over-https-doh.html?m=0>
 	- HTTPS 什麼是根憑證 root certificate: <https://matthung0807.blogspot.com/2021/03/https-what-is-root-certificate.html>
+
+## Script & scheduler
+
+```linenums="1"
+/system script add name=<script_name> source=[/file get <file_name> contents]
+```
+
+- Scheduler: System > Scheduler
+	- Use the script name in On Event section
