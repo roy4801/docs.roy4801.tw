@@ -27,6 +27,12 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j DNAT \
 
 ```bash
 sudo iptables -nvL [-t table]
+
+# INPUT FORWARD OUTPUT
+sudo iptables -nvL 
+
+# NAT
+sudo iptables -t nat -nVL
 ```
 
 - Flush
