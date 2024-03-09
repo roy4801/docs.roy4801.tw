@@ -12,6 +12,15 @@ $ sudo adduser <username>
 $ sudo usermod -a -G group1,group2 user
 ```
 
+- Add a user to sudoer in Debian
+
+```bash
+$ su -
+# usermod -a -G sudo <username>
+
+sudo -l -U <username> # check if the user has sudo
+```
+
 # Misc
 
 * Change the hostname
