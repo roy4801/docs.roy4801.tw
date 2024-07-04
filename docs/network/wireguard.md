@@ -75,6 +75,12 @@ $ wg-quick down wg0  # Turn down
 $ wg
 ```
 
+#### Turn ipv4 forward
+
+```
+echo 1 > /proc/sys/net/ipv4/ip_forward
+```
+
 #### Auto start on linux
 
 - Start
