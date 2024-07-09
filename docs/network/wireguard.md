@@ -77,8 +77,17 @@ $ wg
 
 #### Turn ipv4 forward
 
+- Temporary
 ```
-echo 1 > /proc/sys/net/ipv4/ip_forward
+# echo 1 > /proc/sys/net/ipv4/ip_forward
+# or
+# sysctl -w net.ipv4.ip_forward=1
+```
+
+- You need to edit `/etc/sysctl.conf`
+	- Change `net.ipv4.ip_forward` from `0` to `1`
+```
+# sed -i '/net.ipv4.ip_forward/ s/\(.*= \).*/\11/' /etc/sysctl.conf
 ```
 
 #### Auto start on linux
