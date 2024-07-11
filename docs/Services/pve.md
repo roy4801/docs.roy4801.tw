@@ -21,6 +21,19 @@
 
 <https://www.youtube.com/watch?v=eZXXa7ujoks>
 
+### 使用 lxc 建立 NFS Server
+
+- 選一個 發行版建立 lxc 
+- 根據教學設定
+	- <https://gist.github.com/rwenz3l/0907385f6a6690c34eb8e36fa73d8405>
+- 注意事項
+	- 掛載目錄的權限要對: `chown -R 501:100 /mnt/mp0`
+
+```
+# 移動 iso 到掛載的目錄
+mv /var/lib/vz/template/iso/* /mnt/pve/iso/template/iso/
+```
+
 ## Others
 
 - xterm.js
